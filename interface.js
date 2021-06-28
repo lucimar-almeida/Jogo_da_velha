@@ -1,28 +1,35 @@
-document.addEventListener('DOMContentLoaded', ()=>{
-    let square = document.querySelectorAll('.square')
+document.addEventListener("DOMContentLoaded", ()=>{
 
-    square.forEach((square) => {
-    square.addEventListener('click', handleClick)        
-    });
+        let squares = document.querySelectorAll(".square")
+        
+        squares.forEach((square) => {
+        square.addEventListener("click", handleClick)
+        
+    })
 })
 
 function handleClick(event){
-    let square = event.target
-    let position = square.id
 
+    let square = (event.target)
+    let position = (square.id)
+    
     handleMove(position)
-    updateSquare()
+    upDateSquare()
+
 }
 
-function updateSquare(){
+function upDateSquare(){
+
     let square = document.querySelectorAll(".square")
-    square.forEach((square)=>{
+    
+    square.forEach((square) => {
         let position = square.id
         let symbols = board[position]
-    
-    if (symbols != ""){
-        square.innerHTML = `<div class="${symbols}"></div>`
-    }
-    
+
+        if (symbols != ""){
+
+            square.innerHTML = `<div class="${symbols}"></div>`
+
+        }
     })
 }
