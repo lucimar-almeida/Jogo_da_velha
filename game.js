@@ -1,20 +1,25 @@
 let board = ["", "", "", "", "", "", "", "", ""]
-let playTime = 0
+let playerTime = 0
+let gameOver = false
 let symbols = ["o", "x"]
 
 function handleMove(position){
 
     if (board[position] == ""){
 
-        board[position] = symbols[playTime]
-    }
+        gameOver()
 
-    if (playTime == 0){
-        playTime = 1
+        board[position] = symbols[playerTime]
+    }
+    if (playerTime == 0){
+        playerTime = 1
     } else {
-        playTime = 0
+        playerTime = 0
     }
+}
 
+function gameOver(){
 
-    
+    stats
+
 }
